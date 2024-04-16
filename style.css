@@ -1,0 +1,1357 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 80px;
+}
+
+header img{
+    width: 200px;
+}
+
+header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+header .content input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 20px;
+    color: #c1121f;
+}
+
+header .content .search {
+    background-color: #c1121f;
+    width: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 30px;
+    color: white;
+}
+header .content .select {
+    padding: 5px;
+}
+
+header .content .select label {
+    color: gray;
+    font-size: 20px;
+}
+
+header .content .select select {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;;
+}
+
+header .icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 40px;
+}
+
+header .icons i {
+    margin: 0 15px 0 15px;
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+header .icons .FB {
+    padding: 10px 14px 2px;
+}
+
+header .icons i:hover {
+    background-color: #c1121f;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* ------------------------------------------------------------------------------------ */
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 27px;
+    font-weight: bold;
+    list-style: none;
+    padding: 10px 30px;
+    background-color: #003049;
+    color: white;
+}
+
+nav ul li {
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+}
+
+nav ul li::before {
+    content: "";
+    position: absolute; /*relative li */
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-width: 3px 0;
+    border-style: solid;
+    border-color: #c1121f;
+    transition: 0.3s;
+}
+
+nav ul li:hover::before {
+    width: calc(100% + 4px);
+}
+
+nav ul li::after {
+    content: "";
+    position: absolute; /*relative li */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    border-width: 0 3px;
+    border-style: solid;
+    border-color: #c1121f;
+    transition: 0.3s;
+}
+
+nav ul li:hover::after {
+    height: calc(100% + 4px);;
+}
+
+nav ul li:hover i {
+    color: #509ac2;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li .list {
+    flex-direction: column;
+    position: absolute; /*relative li */
+    top: 50px;
+    left: -35px;
+    font-size: 23px;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+nav ul .gender:hover .list {
+    visibility: visible;
+}
+
+nav ul li .list li {
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+.home {
+    background-image: url("Img/home-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #669bbca3;
+}
+
+.home h2 {
+    text-align: center;
+    font-size: 90px;
+    color: #fdf0d5;
+    position: relative;
+    z-index: 2;
+}
+
+.home h3 {
+    text-align: center;
+    font-size: 50px;
+    color: #fdf0d5;
+    font-family:cursive;
+    position: relative;
+    z-index: 2;
+}
+
+.home .image {
+    margin: 40px auto;
+
+}
+
+.home div img{
+    width: 300px;
+    height: 450px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) scale(1.2) ;
+    z-index: 2;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.attention {
+    width: 90%;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.attention div {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.attention div:hover {
+    transform: scale(1.2);
+}
+
+.attention div::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0030497a;
+}
+
+.attention div::after {
+    content:"Big Sales";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: #0030497a;
+    color: white;
+    font-size: 30px;
+    visibility: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.attention div:hover::after {
+    visibility: visible;
+}
+
+.attention div:hover::before {
+    background-color: transparent;
+}
+
+.attention div img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.man .contanier h3 {
+    font-size: 30px;
+    position: relative;
+}
+
+.man .contanier h3::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    width: 40%;
+    height: 2px;
+    background-color: black;
+}
+
+.man .contanier {
+    width: 90%;
+    margin: auto;
+}
+
+.man .contanier .parent {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.man .contanier .parent div {
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 14px 2px gray;
+    position: relative;
+}
+
+.man .contanier .parent .box1 .pr1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 6px;
+}
+
+.man .contanier .parent .box1 .pr2 {
+    margin: 6px 0 6px;
+    font-size: 25px;
+}
+
+.man .contanier .parent .box1 .pr2 span {
+    color: red;
+}
+
+.man .contanier .parent .box1 button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.man .contanier .parent .box1 article {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c1121f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.man .contanier .parent .box2 .pr1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 6px;
+}
+
+.man .contanier .parent .box2 .pr2 {
+    margin: 6px 0 6px;
+    font-size: 25px;
+}
+
+.man .contanier .parent .box2 .pr2 span {
+    color: red;
+}
+
+.man .contanier .parent .box2 button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.man .contanier .parent .box2 article {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c1121f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.man .contanier .parent .box3 .pr1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 6px;
+}
+
+.man .contanier .parent .box3 .pr2 {
+    margin: 6px 0 6px;
+    font-size: 25px;
+}
+
+.man .contanier .parent .box3 .pr2 span {
+    color: red;
+}
+
+.man .contanier .parent .box3 button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.man .contanier .parent .box3 article {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c1121f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+.woman .contanier h3 {
+    font-size: 30px;
+    position: relative;
+}
+
+.woman .contanier h3::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    width: 40%;
+    height: 2px;
+    background-color: black;
+}
+
+.woman .contanier {
+    width: 90%;
+    margin: auto;
+}
+
+.woman .contanier .parent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.woman .contanier .parent div {
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 14px 2px gray;
+    position: relative;
+}
+
+.woman .contanier .parent .box1 .pr1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 6px;
+}
+
+.woman .contanier .parent .box1 .pr2 {
+    margin: 6px 0 6px;
+    font-size: 25px;
+}
+
+.woman .contanier .parent .box1 .pr2 span {
+    color: red;
+}
+
+.woman .contanier .parent .box1 button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.woman .contanier .parent .box1 article {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c1121f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.woman .contanier .parent .box2 .pr1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 6px;
+}
+
+.woman .contanier .parent .box2 .pr2 {
+    margin: 6px 0 6px;
+    font-size: 25px;
+}
+
+.man .contanier .parent .box2 .pr2 span {
+    color: red;
+}
+
+.woman .contanier .parent .box2 button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.woman .contanier .parent .box2 article {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c1121f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.woman .contanier .parent .box3 .pr1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 6px;
+}
+
+.woman .contanier .parent .box3 .pr2 {
+    margin: 6px 0 6px;
+    font-size: 25px;
+}
+
+.woman .contanier .parent .box3 .pr2 span {
+    color: red;
+}
+
+.woman .contanier .parent .box3 button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.woman .contanier .parent .box3 article {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c1121f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.gifts {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.gifts h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 20px;
+    background-color: #669bbc;
+}
+
+.gifts .parent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gifts .parent .gift1 {
+    transition: 0.3s;
+}
+
+.gifts .parent .gift1:hover {
+    margin-top: 20px;
+    transform: scale(1.1);
+}
+
+.gifts .parent .gift1 .text {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.gifts .parent .gift1 .text p {
+    margin-bottom: 5px;
+}
+
+.gifts .parent .gift1 .text button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.gifts .parent .gift1 .star {
+    text-align: center;
+}
+
+.gifts .parent .gift1 .icons {
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.gifts .parent .gift2 {
+    transition: 0.3s;
+}
+
+.gifts .parent .gift2:hover {
+    margin-top: 20px;
+    transform: scale(1.1);
+}
+
+.gifts .parent .gift2 .text {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 25px
+}
+
+.gifts .parent .gift2 .text p {
+    margin-bottom: 5px;
+}
+
+.gifts .parent .gift2 .text button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20%;
+    background-color: #c1121f;
+}
+
+.gifts .parent .gift2 .star {
+    text-align: center;
+}
+
+.gifts .parent .gift2 .icons {
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.gifts .parent .content {
+    width: 500px;
+    height: 400px;
+    position: relative;
+}
+
+.gifts .parent .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #669bbc;
+    opacity: 0.4;
+}
+
+.gifts .parent .content p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.gifts .parent .content p span {
+    color: red;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.cards {
+    perspective: 600px;
+    width: 90%;
+    margin: 0 auto 20px;
+}
+
+.cards h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #c1121f;
+    background-color: #669bbc;
+    text-align: center;
+}
+
+.cards .parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.cards .parent .box1 {
+    transform-style: preserve-3d;
+    width: 23%;
+    height: 350px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 0px 0px 14px 2px gray;
+}
+
+.cards .parent .box1:hover {
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box1 .front {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.cards .parent .box1 .front img {
+    width: inherit;
+    height: inherit;
+}
+
+.cards .parent .box1 .back {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box1 .back h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box1 .back .text1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cards .parent .box1 .back .text1 .star {
+    color: yellow;
+}
+
+.cards .parent .box1 .back .text1 .pr1 {
+    color: gray;
+}
+
+.cards .parent .box1 .back .pr2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box1 .back span {
+    padding: 5px;
+    background-color: #c1121f;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.cards .parent .box1 .back .text2 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards .parent .box1 .back button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #c1121f;
+    color: white;
+    margin-top: 10px;
+}
+
+.cards .parent .box2 {
+    transform-style: preserve-3d;
+    width: 23%;
+    height: 350px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 0px 0px 14px 2px gray;
+}
+
+.cards .parent .box2:hover {
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box2 .front {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.cards .parent .box2 .front img {
+    width: inherit;
+    height: inherit;
+}
+
+.cards .parent .box2 .back {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+
+.cards .parent .box2 .back h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box2 .back .text1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cards .parent .box2 .back .text1 .star {
+    color: yellow;
+}
+
+.cards .parent .box2 .back .text1 .pr1 {
+    color: gray;
+}
+
+.cards .parent .box2 .back .pr2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box2 .back span {
+    padding: 5px;
+    background-color: #c1121f;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.cards .parent .box2 .back .text2 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards .parent .box2 .back button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #c1121f;
+    color: white;
+    margin-top: 10px;
+}
+
+.cards .parent .box3 {
+    transform-style: preserve-3d;
+    width: 23%;
+    height: 350px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 0px 0px 14px 2px gray;
+}
+
+.cards .parent .box3:hover {
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box3 .front {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.cards .parent .box3 .front img {
+    width: inherit;
+    height: inherit;
+}
+
+.cards .parent .box3 .back {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box3 .back h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box3 .back .text1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cards .parent .box3 .back .text1 .star {
+    color: yellow;
+}
+
+.cards .parent .box3 .back .text1 .pr1 {
+    color: gray;
+}
+
+.cards .parent .box3 .back .pr2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box3 .back span {
+    padding: 5px;
+    background-color: #c1121f;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.cards .parent .box3 .back .text2 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards .parent .box3 .back button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #c1121f;
+    color: white;
+    margin-top: 10px;
+}
+
+.cards .parent .box4 {
+    transform-style: preserve-3d;
+    width: 23%;
+    height: 350px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 0px 0px 14px 2px gray;
+}
+
+.cards .parent .box4:hover {
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box4 .front {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.cards .parent .box4 .front img {
+    width: inherit;
+    height: inherit;
+}
+
+.cards .parent .box4 .back {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box4 .back h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box4.back .text1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cards .parent .box4 .back .text1 .star {
+    color: yellow;
+}
+
+.cards .parent .box4 .back .text1 .pr1 {
+    color: gray;
+}
+
+.cards .parent .box4 .back .pr2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box4 .back span {
+    padding: 5px;
+    background-color: #c1121f;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.cards .parent .box4 .back .text2 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards .parent .box4 .back button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #c1121f;
+    color: white;
+    margin-top: 10px;
+}
+
+
+
+.cards .parent .box5 {
+    transform-style: preserve-3d;
+    width: 23%;
+    height: 350px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 0px 0px 14px 2px gray;
+}
+
+.cards .parent .box5:hover {
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box5 .front {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.cards .parent .box5 .front img {
+    width: inherit;
+    height: inherit;
+}
+
+.cards .parent .box5 .back {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box5 .back h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box5 .back .text1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cards .parent .box5 .back .text1 .star {
+    color: yellow;
+}
+
+.cards .parent .box5 .back .text1 .pr1 {
+    color: gray;
+}
+
+.cards .parent .box5 .back .pr2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box5 .back span {
+    padding: 5px;
+    background-color: #c1121f;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.cards .parent .box5 .back .text2 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards .parent .box5 .back button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #c1121f;
+    color: white;
+    margin-top: 10px;
+}
+
+.cards .parent .box6 {
+    transform-style: preserve-3d;
+    width: 23%;
+    height: 350px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 0px 0px 14px 2px gray;
+}
+
+.cards .parent .box6:hover {
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box6 .front {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.cards .parent .box6 .front img {
+    width: inherit;
+    height: inherit;
+}
+
+.cards .parent .box6 .back {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.cards .parent .box6 .back h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #c1121f;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box6 .back .text1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cards .parent .box6 .back .text1 .star {
+    color: yellow;
+}
+
+.cards .parent .box6 .back .text1 .pr1 {
+    color: gray;
+}
+
+.cards .parent .box6 .back .pr2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards .parent .box6 .back span {
+    padding: 5px;
+    background-color: #c1121f;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.cards .parent .box6 .back .text2 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards .parent .box6 .back button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #c1121f;
+    color: white;
+    margin-top: 10px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+.download {
+    width: 90%;
+    margin: auto;
+}
+
+.download h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #c1121f;
+    background-color: #669bbc;
+    text-align: center;
+}
+
+.download .parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download .box1 .img1 {
+    background-image: url("Img/service-icon.jpg");
+    background-repeat: no-repeat;
+    height: 60px;
+    background-position: center 0px;
+    transition: 1s;
+}
+
+.download .box1 .img1:hover {
+    background-position: center -92px;
+}
+
+.download .box1 button {
+    font-size: 20px;
+    padding: 5px;
+    background-color: #c1121f;
+    color: white;
+    border-radius: 10%;
+}
+
+.download .box2 .img2 {
+    background-image: url("Img/service-icon.jpg");
+    background-repeat: no-repeat;
+    height: 60px;
+    background-position: center -185px;
+    transition: 1s;
+}
+
+.download .box2 .img2:hover {
+    background-position: center -277px;
+}
+
+
+.download .box2 button {
+    font-size: 20px;
+    padding: 5px;
+    background-color: #c1121f;
+    color: white;
+    border-radius: 10%;
+}
+
+.download .box3 .img3 {
+    background-image: url("Img/service-icon.jpg");
+    background-repeat: no-repeat;
+    height: 60px;
+    background-position: center -370px;
+    transition: 1s;
+}
+
+.download .box3 .img3:hover {
+    background-position: center -462px;
+}
+
+
+.download .box3 button {
+    font-size: 20px;
+    padding: 5px;
+    background-color: #c1121f;
+    color: white;
+    border-radius: 10%;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+footer {
+    margin-top: 50px;
+    background-color: #669bbc;
+    text-align: center;
+    padding: 10px;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
+
+footer .icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #003049;
+    color: white;
+    padding: 5px;
+}
